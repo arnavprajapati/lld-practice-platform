@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/*
+ * Off-white canvas, white surfaces, near-black ink, gray supporting text,
+ * one hairline border, soft-flat shadows, 12–16px radii.
+ * No color, no gradients.
+ */
+
+@theme {
+  --color-canvas: #fafafa;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f4f4f2;
+  --color-ink: #0f0f0f;
+  --color-ink-soft: #2c2c2c;
+  --color-muted: #6e6e6e;
+  --color-faint: #9b9b9b;
+  --color-line: #e8e8e5;
+  --color-line-strong: #d6d6d2;
+
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-card: 14px;
+  --radius-badge: 9999px;
+  --radius-btn: 10px;
+
+  --shadow-soft:
+    0 1px 2px rgba(15, 15, 15, 0.04),
+    0 1px 3px rgba(15, 15, 15, 0.03);
+
+  --shadow-card:
+    0 2px 4px rgba(15, 15, 15, 0.05),
+    0 4px 12px rgba(15, 15, 15, 0.05);
+
+  --font-sans:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  --font-mono:
+    "JetBrains Mono",
+    ui-monospace,
+    "SF Mono",
+    Menlo,
+    Consolas,
+    monospace;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  a,
+  button {
+    transition:
+      color 150ms ease,
+      background-color 150ms ease,
+      border-color 150ms ease,
+      box-shadow 150ms ease,
+      transform 150ms ease;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-faint);
+  }
+}
